@@ -13,6 +13,10 @@ app.get('/redirect', function (request, response) {
 	response.redirect(301, '/suprise');
 });
 
+app.get('/suprise', function (request, response) {
+	response.send("sue-preeze, suckah!");
+});
+
 app.listen(8000, function () {
 	console.log("Port of Call - 8000");
 });
