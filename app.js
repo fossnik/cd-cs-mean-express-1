@@ -1,15 +1,18 @@
 var express = require('express');
 var app = express();
 
-app.get('/cities', function (request, response) {
-	var cities = ['Caspiana', 'Indigo', 'Paradise'];
-	response.send(cities);
+app.get('/', function (request, response) {
+	response.send("Hello World");
 });
 
-app.get('/locations', function (request, response) {
-	response.redirect(301, '/cities');
+app.get('/name', function (request, response) {
+	response.send("Zack");
 });
 
-app.listen(3001, function () {
-	console.log("Running Express");
+app.get('/redirect', function (request, response) {
+	response.redirect(301, '/suprise');
+});
+
+app.listen(8000, function () {
+	console.log("Port of Call - 8000");
 });
